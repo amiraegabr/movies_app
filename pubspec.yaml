@@ -36,6 +36,7 @@ dependencies:
   cupertino_icons: ^1.0.8
   flutter_svg:
   flutter_gen: ^5.12.0
+  flutter_native_splash: ^2.4.7
 
 dev_dependencies:
   flutter_test:
@@ -46,11 +47,6 @@ dev_dependencies:
 
   #dart run build_runner build
 
-  # The "flutter_lints" package below contains a set of recommended lints to
-  # encourage good coding practices. The lint set provided by the package is
-  # activated in the `analysis_options.yaml` file located at the root of your
-  # package. See that file for information about deactivating specific lint
-  # rules and activating additional ones.
   flutter_lints: ^6.0.0
 
 flutter_gen:
@@ -60,27 +56,84 @@ flutter_gen:
     image: true
     flutter_svg: true
 
-# For information on the generic Dart part of this file, see the
-# following page: https://dart.dev/tools/pub/pubspec
+flutter_native_splash:
+
+  # dart run flutter_native_splash:create
+
+   web: false
+
+  #! FOR ALL PLATFORM, except Android 12+:
+
+  # general color for all platform (except android 12+):
+  # see there only 2 lines in all parameters that marked as [required], so others
+  # remain optional. NOTE that if you specify the [required] color, then you cant
+  # use the [required] background_image in the next section. the reverse is true.
+  # select one, they cant work together.
+   color: "#121312"  ##====================================[REQUIRED]==========
+  #color_dark: "#042a49"
+  # platform-specific color. will override general color if active:
+  #color_android: "#42a5f5"
+  #color_dark_android: "#042a49"
+  #color_ios: "#42a5f5"
+  #color_dark_ios: "#042a49"
+  #color_web: "#42a5f5"
+  #color_dark_web: "#042a49"
+
+  # general background_image for all platform (except android 12+)
+  # if you specify this [required] background_image, then you should comment the
+  # [required] color in previous section. select one, they cant work together.
+  #background_image:      "assets/background.png" #========[REQUIRED]============
+  #background_image_dark: "assets/dark-background.png"
+
+
+  # general image for all platform (except android 12+):
+  # allows you to specify an image used in the splash screen. It must be a
+  # png file and should be sized for 4x pixel density.
+   image:                assets/images/logo.png
+  #image_dark:          assets/splash-invert.png
+
+  # general branding for all platform (except android 12+):
+  # allows you to specify an image used as branding in the splash screen. should be png.
+   branding:      assets/images/branding.png
+  #branding_dark: assets/dart_dark.png
+
+  # branding position:
+  #branding_mode: bottom                # default bottom
+  #branding_bottom_padding: 24          # default 0
+
+   fullscreen: true                # default false
+
+  #========================================================================
+
+  #! ANDROID 12+ configuration:
+   android_12:
+    # background color
+    color: "#121312"
+    # color_dark: "#042a49"
+
+    # center-logo
+    image: assets/images/logo.png
+    # image_dark: assets/images/logo/logo-splash2.png
+
+    # center-logo background color
+    icon_background_color: "#121312"
+    # icon_background_color_dark: "#eeeeee"
+
+    # branding:
+    # The branding image dimensions must be 800x320 px.
+    branding:      assets/images/branding.png
+    #branding_dark: assets/dart_dark.png
 
 # The following section is specific to Flutter packages.
 flutter:
-
-  # The following line ensures that the Material Icons font is
-  # included with your application, so that you can use the icons in
-  # the material Icons class.
   uses-material-design: true
 
-  # To add assets to your application, add an assets section, like this:
   assets:
     - assets/images/
+    - assets/images/avatars/
+    - assets/images/onboarding/
     - assets/icons/
 
-  # An image asset can refer to one or more resolution-specific "variants", see
-  # https://flutter.dev/to/resolution-aware-images
-
-  # For details regarding adding assets from package dependencies, see
-  # https://flutter.dev/to/asset-from-package
 
   # To add custom fonts to your application, add a fonts section here,
   # in this "flutter" section. Each entry in this list should have a
@@ -98,6 +151,3 @@ flutter:
   #       - asset: fonts/TrajanPro.ttf
   #       - asset: fonts/TrajanPro_Bold.ttf
   #         weight: 700
-  #
-  # For details regarding fonts from package dependencies,
-  # see https://flutter.dev/to/font-from-package
