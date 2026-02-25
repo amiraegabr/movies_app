@@ -6,6 +6,11 @@ class ThemeManager {
   static ThemeData darkTheme() {
     return ThemeData(
       scaffoldBackgroundColor: AppColors.black,
+      appBarTheme: AppBarTheme(
+        centerTitle: true,
+        backgroundColor: Colors.transparent,
+        foregroundColor: AppColors.white,
+      ),
       elevatedButtonTheme: ElevatedButtonThemeData(
         style: ElevatedButton.styleFrom(
           backgroundColor: AppColors.yellow,
@@ -36,6 +41,10 @@ class ThemeManager {
           color: AppColors.white,
           fontSize: 20,
           fontWeight: FontWeight.normal,
+        ),
+        bodyLarge: TextStyle(
+          //16
+          color: AppColors.white,
         ),
       ),
     );
