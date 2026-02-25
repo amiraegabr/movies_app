@@ -32,7 +32,7 @@ class _OnboardingViewState extends State<OnboardingView> {
   );
 
   void _finish() =>
-      Navigator.pushReplacementNamed(context, PageRouteNames.home);
+      Navigator.pushReplacementNamed(context, PageRouteNames.signIn);
 
   @override
   void dispose() {
