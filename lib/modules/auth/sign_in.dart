@@ -17,119 +17,136 @@ class SignIn extends StatelessWidget {
           child: SingleChildScrollView(
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.stretch,
+              spacing: 20,
               children: [
-                const SizedBox(height: 60),
-                // Logo
-                Center(child: Assets.images.logo.image(height: 150)),
-                const SizedBox(height: 40),
+                Center(child: Assets.images.logo.image(width: 200)),
 
-                // Email Field
                 CustomTextFormField(
                   hint: 'Email',
                   prefixIcon: Padding(
-                    padding: const EdgeInsets.all(12.0),
-                    child: Assets.icons.emailIcon.svg(
-                      colorFilter: const ColorFilter.mode(AppColors.white, BlendMode.srcIn),
-                    ),
+                    padding: const EdgeInsets.all(8.0),
+                    child: Assets.icons.emailIcon.svg(),
                   ),
                 ),
-                const SizedBox(height: 20),
 
-                // Password Field
                 CustomTextFormField(
                   hint: 'Password',
                   isPassword: true,
                   prefixIcon: Padding(
-                    padding: const EdgeInsets.all(12.0),
-                    child: Assets.icons.lockIcon.svg(
-                      colorFilter: const ColorFilter.mode(AppColors.white, BlendMode.srcIn),
+                    padding: const EdgeInsets.all(8.0),
+                    child: Assets.icons.lockIcon.svg(),
+                  ),
+                ),
+
+                Align(
+                  alignment: Alignment.centerRight,
+                  child: TextButton(
+                    onPressed: () => Navigator.pushNamed(
+                      context,
+                      PageRouteNames.forgotPassword,
+                    ),
+                    child: const Text(
+                      'Forget Password ?',
+                      style: TextStyle(color: AppColors.yellow),
                     ),
                   ),
                 ),
 
-                // Forget Password
-                Align(
-                  alignment: Alignment.centerRight,
-                  child: TextButton(
-                    onPressed: () => Navigator.pushNamed(context, PageRouteNames.forgotPassword),
-                    child: const Text('Forget Password ?', style: TextStyle(color: AppColors.yellow)),
-                  ),
-                ),
-                const SizedBox(height: 20),
-
-                // Login Button
                 ElevatedButton(
                   onPressed: () {
-                    Navigator.pushReplacementNamed(context, PageRouteNames.home);
+                    Navigator.pushReplacementNamed(
+                      context,
+                      PageRouteNames.layoutView,
+                    );
                   },
-                  style: ElevatedButton.styleFrom(
-                    backgroundColor: AppColors.yellow,
-                    foregroundColor: AppColors.black,
-                    shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(15)),
-                    padding: const EdgeInsets.symmetric(vertical: 16),
-                  ),
-                  child: const Text('Login', style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold)),
+                  child: const Text('Login'),
                 ),
-                const SizedBox(height: 20),
 
-                // Create Account Link
                 Row(
                   mainAxisAlignment: MainAxisAlignment.center,
                   children: [
-                    const Text("Don’t Have Account ? ", style: TextStyle(color: AppColors.white)),
+                    const Text(
+                      "Don’t Have Account? ",
+                      style: TextStyle(color: AppColors.white),
+                    ),
                     GestureDetector(
                       onTap: () {
-                        // استخدام الطريقة الاحترافية (Named Route)
                         Navigator.pushNamed(context, PageRouteNames.signUp);
                       },
                       child: const Text(
                         'Create One',
-                        style: TextStyle(color: AppColors.yellow, fontWeight: FontWeight.bold),
+                        style: TextStyle(
+                          color: AppColors.yellow,
+                          fontWeight: FontWeight.bold,
+                        ),
                       ),
                     ),
                   ],
                 ),
-                const SizedBox(height: 20),
-                const Row(
+
+                Row(
                   children: [
-                    Expanded(child: Divider(color: AppColors.yellow, thickness: 1, indent: 30, endIndent: 10)),
-                    Text('OR', style: TextStyle(color: AppColors.yellow, fontWeight: FontWeight.bold)),
-                    Expanded(child: Divider(color: AppColors.yellow, thickness: 1, indent: 10, endIndent: 30)),
+                    Expanded(
+                      child: Divider(
+                        color: AppColors.yellow,
+                        thickness: 1,
+                        indent: 30,
+                        endIndent: 10,
+                      ),
+                    ),
+                    Text(
+                      'OR',
+                      style: TextStyle(
+                        color: AppColors.yellow,
+                        fontWeight: FontWeight.bold,
+                      ),
+                    ),
+                    Expanded(
+                      child: Divider(
+                        color: AppColors.yellow,
+                        thickness: 1,
+                        indent: 10,
+                        endIndent: 30,
+                      ),
+                    ),
                   ],
                 ),
-                const SizedBox(height: 20),
 
-                // Google Login Button
                 ElevatedButton.icon(
-                  onPressed: () => Navigator.pushReplacementNamed(context, PageRouteNames.home),
-                  icon: Assets.icons.googleIcon.svg(width: 24),
-                  label: const Text('Login With Google', style: TextStyle(fontSize: 18, fontWeight: FontWeight.bold)),
-                  style: ElevatedButton.styleFrom(
-                    backgroundColor: AppColors.yellow,
-                    foregroundColor: AppColors.black,
-                    shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(15)),
-                    padding: const EdgeInsets.symmetric(vertical: 16),
+                  onPressed: () => Navigator.pushReplacementNamed(
+                    context,
+                    PageRouteNames.layoutView,
                   ),
+                  icon: Assets.icons.googleIcon.svg(width: 24),
+                  label: const Text('Login With Google'),
                 ),
-                const SizedBox(height: 30),
+
                 Center(
                   child: Container(
                     padding: const EdgeInsets.all(4),
-                    decoration: BoxDecoration(border: Border.all(color: AppColors.yellow), borderRadius: BorderRadius.circular(30)),
+                    decoration: BoxDecoration(
+                      border: Border.all(color: AppColors.yellow),
+                      borderRadius: BorderRadius.circular(30),
+                    ),
                     child: Row(
                       mainAxisSize: MainAxisSize.min,
                       children: [
-                        Padding(padding: const EdgeInsets.symmetric(horizontal: 8.0), child: Assets.icons.enIcon.svg(width: 30)),
+                        Padding(
+                          padding: const EdgeInsets.symmetric(horizontal: 8.0),
+                          child: Assets.icons.enIcon.svg(width: 30),
+                        ),
                         Container(
                           padding: const EdgeInsets.all(8),
-                          decoration: const BoxDecoration(color: AppColors.yellow, shape: BoxShape.circle),
+                          decoration: const BoxDecoration(
+                            color: AppColors.yellow,
+                            shape: BoxShape.circle,
+                          ),
                           child: Assets.icons.arIcon.svg(width: 25),
                         ),
                       ],
                     ),
                   ),
                 ),
-                const SizedBox(height: 20),
               ],
             ),
           ),

@@ -29,28 +29,21 @@ class _RegisterState extends State<Register> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: const Color(0xFF121312),
       appBar: AppBar(
-        backgroundColor: Colors.transparent,
-        elevation: 0,
         leading: IconButton(
-          icon: const Icon(Icons.arrow_back_ios, color: AppColors.yellow),
+          icon: Icon(Icons.arrow_back_ios),
           onPressed: () => Navigator.pop(context),
         ),
-        title: const Text(
-          'Register',
-          style: TextStyle(color: AppColors.yellow),
-        ),
-        centerTitle: true,
+        title: Text('Register'),
       ),
       body: SafeArea(
         child: Padding(
-          padding: const EdgeInsets.symmetric(horizontal: 16.0),
+          padding: EdgeInsets.symmetric(horizontal: 16.0),
           child: SingleChildScrollView(
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.stretch,
+              spacing: 20,
               children: [
-                const SizedBox(height: 20),
                 SizedBox(
                   height: 120,
                   child: ListView.builder(
@@ -59,7 +52,8 @@ class _RegisterState extends State<Register> {
                     itemBuilder: (context, index) {
                       bool isSelected = selectedAvatarIndex == index;
                       return GestureDetector(
-                        onTap: () => setState(() => selectedAvatarIndex = index),
+                        onTap: () =>
+                            setState(() => selectedAvatarIndex = index),
                         child: Container(
                           margin: const EdgeInsets.symmetric(horizontal: 8),
                           padding: const EdgeInsets.all(4),
@@ -81,98 +75,52 @@ class _RegisterState extends State<Register> {
                     },
                   ),
                 ),
-                const Center(
-                  child: Text(
-                    'Avatar',
-                    style: TextStyle(color: Colors.white, fontSize: 16),
-                  ),
+                Center(
+                  child: Text('Avatar', style: TextTheme.of(context).bodyLarge),
                 ),
-                const SizedBox(height: 30),
                 CustomTextFormField(
                   hint: 'Name',
                   prefixIcon: Padding(
-                    padding: const EdgeInsets.all(12.0),
-                    child: Assets.icons.idIcon.svg(
-                      colorFilter: const ColorFilter.mode(
-                        AppColors.white,
-                        BlendMode.srcIn,
-                      ),
-                    ),
+                    padding: const EdgeInsets.all(8.0),
+                    child: Assets.icons.idIcon.svg(),
                   ),
                 ),
-                const SizedBox(height: 20),
                 CustomTextFormField(
                   hint: 'Email',
                   prefixIcon: Padding(
                     padding: const EdgeInsets.all(12.0),
-                    child: Assets.icons.emailIcon.svg(
-                      colorFilter: const ColorFilter.mode(
-                        AppColors.white,
-                        BlendMode.srcIn,
-                      ),
-                    ),
+                    child: Assets.icons.emailIcon.svg(),
                   ),
                 ),
-                const SizedBox(height: 20),
                 CustomTextFormField(
                   hint: 'Password',
                   isPassword: true,
                   prefixIcon: Padding(
-                    padding: const EdgeInsets.all(12.0),
-                    child: Assets.icons.lockIcon.svg(
-                      colorFilter: const ColorFilter.mode(
-                        AppColors.white,
-                        BlendMode.srcIn,
-                      ),
-                    ),
+                    padding: const EdgeInsets.all(8.0),
+                    child: Assets.icons.lockIcon.svg(),
                   ),
                 ),
-                const SizedBox(height: 20),
                 CustomTextFormField(
                   hint: 'Confirm Password',
                   isPassword: true,
                   prefixIcon: Padding(
-                    padding: const EdgeInsets.all(12.0),
-                    child: Assets.icons.lockIcon.svg(
-                      colorFilter: const ColorFilter.mode(
-                        AppColors.white,
-                        BlendMode.srcIn,
-                      ),
-                    ),
+                    padding: const EdgeInsets.all(8.0),
+                    child: Assets.icons.lockIcon.svg(),
                   ),
                 ),
-                const SizedBox(height: 20),
                 CustomTextFormField(
                   hint: 'Phone Number',
                   prefixIcon: Padding(
-                    padding: const EdgeInsets.all(12.0),
-                    child: Assets.icons.phoneIcon.svg(
-                      colorFilter: const ColorFilter.mode(
-                        AppColors.white,
-                        BlendMode.srcIn,
-                      ),
-                    ),
+                    padding: const EdgeInsets.all(8.0),
+                    child: Assets.icons.phoneIcon.svg(),
                   ),
                 ),
-                const SizedBox(height: 30),
                 ElevatedButton(
                   onPressed: () {
-                    Navigator.pushNamed(context, PageRouteNames.updateProfile);
+                    Navigator.pushNamed(context, PageRouteNames.layoutView);
                   },
-                  style: ElevatedButton.styleFrom(
-                    backgroundColor: AppColors.yellow,
-                    foregroundColor: AppColors.black,
-                    shape: RoundedRectangleBorder(
-                      borderRadius: BorderRadius.circular(15),
-                    ),
-                    padding: const EdgeInsets.symmetric(vertical: 16),
-                  ),
-                  child: const Text(
-                    'Create Account',
-                    style: TextStyle(fontSize: 18, fontWeight: FontWeight.bold),
-                  ),
+                  child: const Text('Create Account'),
                 ),
-                const SizedBox(height: 20),
                 Row(
                   mainAxisAlignment: MainAxisAlignment.center,
                   children: [
@@ -181,7 +129,8 @@ class _RegisterState extends State<Register> {
                       style: TextStyle(color: Colors.white),
                     ),
                     GestureDetector(
-                      onTap: () => Navigator.pop(context),
+                      onTap: () =>
+                          Navigator.pushNamed(context, PageRouteNames.signIn),
                       child: const Text(
                         'Login',
                         style: TextStyle(
@@ -192,7 +141,6 @@ class _RegisterState extends State<Register> {
                     ),
                   ],
                 ),
-                const SizedBox(height: 30),
                 Center(
                   child: Container(
                     padding: const EdgeInsets.all(4),
@@ -219,7 +167,6 @@ class _RegisterState extends State<Register> {
                     ),
                   ),
                 ),
-                const SizedBox(height: 20),
               ],
             ),
           ),
