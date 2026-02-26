@@ -26,12 +26,26 @@ class $AssetsIconsGen {
   /// File path: assets/icons/en_icon.svg
   SvgGenImage get enIcon => const SvgGenImage('assets/icons/en_icon.svg');
 
+  /// File path: assets/icons/explore.svg
+  SvgGenImage get explore => const SvgGenImage('assets/icons/explore.svg');
+
+  /// File path: assets/icons/explore_active.svg
+  SvgGenImage get exploreActive =>
+      const SvgGenImage('assets/icons/explore_active.svg');
+
   /// File path: assets/icons/eye_icon.svg
   SvgGenImage get eyeIcon => const SvgGenImage('assets/icons/eye_icon.svg');
 
   /// File path: assets/icons/google_icon.svg
   SvgGenImage get googleIcon =>
       const SvgGenImage('assets/icons/google_icon.svg');
+
+  /// File path: assets/icons/home.svg
+  SvgGenImage get home => const SvgGenImage('assets/icons/home.svg');
+
+  /// File path: assets/icons/home_active.svg
+  SvgGenImage get homeActive =>
+      const SvgGenImage('assets/icons/home_active.svg');
 
   /// File path: assets/icons/id_icon.svg
   SvgGenImage get idIcon => const SvgGenImage('assets/icons/id_icon.svg');
@@ -42,16 +56,38 @@ class $AssetsIconsGen {
   /// File path: assets/icons/phone_icon.svg
   SvgGenImage get phoneIcon => const SvgGenImage('assets/icons/phone_icon.svg');
 
+  /// File path: assets/icons/profile.svg
+  SvgGenImage get profile => const SvgGenImage('assets/icons/profile.svg');
+
+  /// File path: assets/icons/profile_active.svg
+  SvgGenImage get profileActive =>
+      const SvgGenImage('assets/icons/profile_active.svg');
+
+  /// File path: assets/icons/search.svg
+  SvgGenImage get search => const SvgGenImage('assets/icons/search.svg');
+
+  /// File path: assets/icons/search_active.svg
+  SvgGenImage get searchActive =>
+      const SvgGenImage('assets/icons/search_active.svg');
+
   /// List of all assets
   List<SvgGenImage> get values => [
     arIcon,
     emailIcon,
     enIcon,
+    explore,
+    exploreActive,
     eyeIcon,
     googleIcon,
+    home,
+    homeActive,
     idIcon,
     lockIcon,
     phoneIcon,
+    profile,
+    profileActive,
+    search,
+    searchActive,
   ];
 }
 
