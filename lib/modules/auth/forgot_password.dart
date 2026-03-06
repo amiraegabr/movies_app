@@ -18,7 +18,10 @@ class ForgotPassword extends StatelessWidget {
             Assets.images.forgotPassword.image(),
             CustomTextFormField(
               hint: 'Email',
-              prefixIcon: Assets.icons.emailIcon.svg(),
+              prefixIcon: Padding(
+                padding: EdgeInsetsGeometry.all(8),
+                child: Assets.icons.emailIcon.svg(),
+              ),
             ),
             SizedBox(
               width: double.infinity,
