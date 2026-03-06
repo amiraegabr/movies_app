@@ -3,7 +3,7 @@ import 'package:movies_app/core/routes/page_route_names.dart';
 import 'package:movies_app/modules/auth/register.dart';
 import 'package:movies_app/modules/auth/sign_in.dart';
 import 'package:movies_app/modules/auth/forgot_password.dart';
-import 'package:movies_app/modules/home/home_view.dart';
+import 'package:movies_app/modules/layout_view/layout_view.dart';
 import 'package:movies_app/modules/onboarding/onboarding_view.dart';
 
 abstract class AppRouter {
@@ -22,11 +22,11 @@ abstract class AppRouter {
       case PageRouteNames.forgotPassword:
         return MaterialPageRoute(builder: (context) => const ForgotPassword());
 
-      case PageRouteNames.home:
-        return MaterialPageRoute(builder: (context) => const HomeView());
+      case PageRouteNames.layoutView:
+        return MaterialPageRoute(builder: (context) => const LayoutView());
 
       default:
-        return MaterialPageRoute(builder: (context) => const HomeView());
+        return MaterialPageRoute(builder: (context) => const LayoutView());
     }
   }
 }

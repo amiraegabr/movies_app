@@ -12,66 +12,48 @@
 import 'package:flutter/services.dart';
 import 'package:flutter/widgets.dart';
 import 'package:flutter_svg/flutter_svg.dart' as _svg;
-import 'package:flutter/foundation.dart' show kIsWeb;
 import 'package:vector_graphics/vector_graphics.dart' as _vg;
 
 class $AssetsIconsGen {
   const $AssetsIconsGen();
 
-  /// File path: assets/icons/ar_icon.svg
   SvgGenImage get arIcon => const SvgGenImage('assets/icons/ar_icon.svg');
 
-  /// File path: assets/icons/email_icon.svg
   SvgGenImage get emailIcon => const SvgGenImage('assets/icons/email_icon.svg');
 
-  /// File path: assets/icons/en_icon.svg
   SvgGenImage get enIcon => const SvgGenImage('assets/icons/en_icon.svg');
 
-  /// File path: assets/icons/explore.svg
   SvgGenImage get explore => const SvgGenImage('assets/icons/explore.svg');
 
-  /// File path: assets/icons/explore_active.svg
   SvgGenImage get exploreActive =>
       const SvgGenImage('assets/icons/explore_active.svg');
 
-  /// File path: assets/icons/eye_icon.svg
   SvgGenImage get eyeIcon => const SvgGenImage('assets/icons/eye_icon.svg');
 
-  /// File path: assets/icons/google_icon.svg
   SvgGenImage get googleIcon =>
       const SvgGenImage('assets/icons/google_icon.svg');
 
-  /// File path: assets/icons/home.svg
   SvgGenImage get home => const SvgGenImage('assets/icons/home.svg');
 
-  /// File path: assets/icons/home_active.svg
   SvgGenImage get homeActive =>
       const SvgGenImage('assets/icons/home_active.svg');
 
-  /// File path: assets/icons/id_icon.svg
   SvgGenImage get idIcon => const SvgGenImage('assets/icons/id_icon.svg');
 
-  /// File path: assets/icons/lock_icon.svg
   SvgGenImage get lockIcon => const SvgGenImage('assets/icons/lock_icon.svg');
 
-  /// File path: assets/icons/phone_icon.svg
   SvgGenImage get phoneIcon => const SvgGenImage('assets/icons/phone_icon.svg');
 
-  /// File path: assets/icons/profile.svg
   SvgGenImage get profile => const SvgGenImage('assets/icons/profile.svg');
 
-  /// File path: assets/icons/profile_active.svg
   SvgGenImage get profileActive =>
       const SvgGenImage('assets/icons/profile_active.svg');
 
-  /// File path: assets/icons/search.svg
   SvgGenImage get search => const SvgGenImage('assets/icons/search.svg');
 
-  /// File path: assets/icons/search_active.svg
   SvgGenImage get searchActive =>
       const SvgGenImage('assets/icons/search_active.svg');
 
-  /// List of all assets
   List<SvgGenImage> get values => [
     arIcon,
     emailIcon,
@@ -95,68 +77,51 @@ class $AssetsIconsGen {
 class $AssetsImagesGen {
   const $AssetsImagesGen();
 
-  /// Directory path: assets/images/avatars
   $AssetsImagesAvatarsGen get avatars => const $AssetsImagesAvatarsGen();
 
-  /// File path: assets/images/branding.png
   AssetGenImage get branding =>
       const AssetGenImage('assets/images/branding.png');
 
-  /// File path: assets/images/forgot_password.png
   AssetGenImage get forgotPassword =>
       const AssetGenImage('assets/images/forgot_password.png');
 
-  /// File path: assets/images/logo.png
   AssetGenImage get logo => const AssetGenImage('assets/images/logo.png');
 
-  /// Directory path: assets/images/onboarding
   $AssetsImagesOnboardingGen get onboarding =>
       const $AssetsImagesOnboardingGen();
 
-  /// List of all assets
   List<AssetGenImage> get values => [branding, forgotPassword, logo];
 }
 
 class $AssetsImagesAvatarsGen {
   const $AssetsImagesAvatarsGen();
-
-  /// File path: assets/images/avatars/avatar1.png
   AssetGenImage get avatar1 =>
       const AssetGenImage('assets/images/avatars/avatar1.png');
 
-  /// File path: assets/images/avatars/avatar2.png
   AssetGenImage get avatar2 =>
       const AssetGenImage('assets/images/avatars/avatar2.png');
 
-  /// File path: assets/images/avatars/avatar3.png
   AssetGenImage get avatar3 =>
       const AssetGenImage('assets/images/avatars/avatar3.png');
 
-  /// File path: assets/images/avatars/avatar4.png
   AssetGenImage get avatar4 =>
       const AssetGenImage('assets/images/avatars/avatar4.png');
 
-  /// File path: assets/images/avatars/avatar5.png
   AssetGenImage get avatar5 =>
       const AssetGenImage('assets/images/avatars/avatar5.png');
 
-  /// File path: assets/images/avatars/avatar6.png
   AssetGenImage get avatar6 =>
       const AssetGenImage('assets/images/avatars/avatar6.png');
 
-  /// File path: assets/images/avatars/avatar7.png
   AssetGenImage get avatar7 =>
       const AssetGenImage('assets/images/avatars/avatar7.png');
 
-  /// File path: assets/images/avatars/avatar8.png
   AssetGenImage get avatar8 =>
       const AssetGenImage('assets/images/avatars/avatar8.png');
 
-  /// File path: assets/images/avatars/avatar9.png
   AssetGenImage get avatar9 =>
       const AssetGenImage('assets/images/avatars/avatar9.png');
 
-  /// List of all assets
   List<AssetGenImage> get values => [
     avatar1,
     avatar2,
@@ -173,32 +138,25 @@ class $AssetsImagesAvatarsGen {
 class $AssetsImagesOnboardingGen {
   const $AssetsImagesOnboardingGen();
 
-  /// File path: assets/images/onboarding/movie_posters_onboarding.png
   AssetGenImage get moviePostersOnboarding => const AssetGenImage(
     'assets/images/onboarding/movie_posters_onboarding.png',
   );
 
-  /// File path: assets/images/onboarding/onboarding1.png
   AssetGenImage get onboarding1 =>
       const AssetGenImage('assets/images/onboarding/onboarding1.png');
 
-  /// File path: assets/images/onboarding/onboarding2.png
   AssetGenImage get onboarding2 =>
       const AssetGenImage('assets/images/onboarding/onboarding2.png');
 
-  /// File path: assets/images/onboarding/onboarding3.png
   AssetGenImage get onboarding3 =>
       const AssetGenImage('assets/images/onboarding/onboarding3.png');
 
-  /// File path: assets/images/onboarding/onboarding4.png
   AssetGenImage get onboarding4 =>
       const AssetGenImage('assets/images/onboarding/onboarding4.png');
 
-  /// File path: assets/images/onboarding/onboarding5.png
   AssetGenImage get onboarding5 =>
       const AssetGenImage('assets/images/onboarding/onboarding5.png');
 
-  /// List of all assets
   List<AssetGenImage> get values => [
     moviePostersOnboarding,
     onboarding1,
