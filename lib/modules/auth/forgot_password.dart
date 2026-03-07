@@ -1,10 +1,36 @@
+import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:movies_app/modules/widgets/custom_textformfield.dart';
 
 import '../../core/gen/assets.gen.dart';
 
-class ForgotPassword extends StatelessWidget {
+class ForgotPassword extends StatefulWidget {
   const ForgotPassword({super.key});
+
+  @override
+  State<ForgotPassword> createState() => _ForgotPasswordState();
+}
+
+class _ForgotPasswordState extends State<ForgotPassword> {
+  final TextEditingController emailController = TextEditingController();
+
+  Future<void> resetPassword(BuildContext context) async {
+    try {
+      await FirebaseAuth.instance.sendPasswordResetEmail(
+        email: emailController.text.trim(),
+      );
+
+      ScaffoldMessenger.of(context).showSnackBar(
+        const SnackBar(content: Text("Password reset email sent")),
+      );
+
+      Navigator.pop(context);
+    } on FirebaseAuthException catch (e) {
+      ScaffoldMessenger.of(context).showSnackBar(
+        SnackBar(content: Text(e.message ?? "Something went wrong")),
+      );
+    }
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -17,16 +43,24 @@ class ForgotPassword extends StatelessWidget {
           children: [
             Assets.images.forgotPassword.image(),
             CustomTextFormField(
+              controller: emailController,
               hint: 'Email',
+              validator: (value) {
+                if (emailController.text.isEmpty) {
+                  return 'Please enter your email';
+                } else {
+                  return null;
+                }
+              },
               prefixIcon: Padding(
-                padding: EdgeInsetsGeometry.all(8),
+                padding: EdgeInsets.all(8),
                 child: Assets.icons.emailIcon.svg(),
               ),
             ),
             SizedBox(
               width: double.infinity,
               child: ElevatedButton(
-                onPressed: () {},
+                onPressed: () => resetPassword(context),
                 child: Text("Verify Email"),
               ),
             ),

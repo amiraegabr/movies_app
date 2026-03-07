@@ -33,6 +33,7 @@ class _CustomTextFormFieldState extends State<CustomTextFormField> {
       keyboardType: widget.keyboardType,
       obscureText: widget.isPassword ? _obscure : false,
       validator: widget.validator,
+      autovalidateMode: AutovalidateMode.onUnfocus,
       // style: TextTheme.of(context).bodyLarge,
       decoration: InputDecoration(
         contentPadding: EdgeInsets.all(8),
