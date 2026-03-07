@@ -91,7 +91,7 @@ class _RegisterState extends State<Register> {
       ),
       body: SafeArea(
         child: Padding(
-          padding: const EdgeInsets.symmetric(horizontal: 16.0),
+          padding: EdgeInsets.symmetric(horizontal: 16.0),
           child: SingleChildScrollView(
             child: Form(
               key: _formKey,
